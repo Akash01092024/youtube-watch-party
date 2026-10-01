@@ -1,0 +1,103 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #f4f6fa;
+  font-size: 22px;
+  font-weight: 700;
+}
+.brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #ed243b;
+  color: white;
+  box-shadow: 0 4px 16px rgb(237 36 59 / 20%);
+}
+input,
+select,
+textarea {
+  background-color: #090f18;
+  color: #e8edf5;
+  border: 1px solid #354154;
+  border-radius: 8px;
+  padding: 13px;
+  font: inherit;
+  color-scheme: dark;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #7f8da3;
+}
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #53627a;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #ff6472;
+  outline-offset: 2px;
+  border-color: #ff4658;
+  background-color: #101927;
+  box-shadow: 0 0 0 4px rgb(255 70 88 / 10%);
+}
+select option {
+  background: #101927;
+  color: #e8edf5;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #e8edf5;
+  -webkit-box-shadow: 0 0 0 1000px #090f18 inset;
+  caret-color: #e8edf5;
+}
+button {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+button:not(:disabled):active {
+  transform: translateY(0);
+}
+.primary:not(:disabled):hover {
+  background: #ff354d;
+  box-shadow: 0 5px 18px rgb(237 36 59 / 25%);
+}
+.tabs button:not(:disabled):hover {
+  background: #283244;
+  border-color: #ff4658;
+  color: white;
+}
+.remove-button:not(:disabled):hover {
+  background: rgb(237 36 59 / 12%);
+  border-color: #ff6472;
+  color: #ffb0b8;
+}
+@media (prefers-reduced-motion: reduce) {
+  button,
+  input,
+  select,
+  textarea {
+    transition: none;
+  }
+  button:not(:disabled):hover,
+  button:not(:disabled):active {
+    transform: none;
+  }
+}

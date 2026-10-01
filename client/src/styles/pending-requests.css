@@ -1,0 +1,53 @@
+.request-item {
+  padding: 20px;
+  border-bottom: 1px solid #2a3441;
+}
+.request-item:last-child {
+  border-bottom: 0;
+}
+.request-description {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.request-description > div {
+  min-width: 0;
+}
+.request-description p {
+  margin: 0 0 6px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.request-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+.approve-button,
+.reject-button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: transparent;
+}
+.approve-button {
+  border: 1px solid #46d99b;
+  color: #46d99b;
+}
+.approve-button:not(:disabled):hover {
+  background: rgb(70 217 155 / 12%);
+}
+.reject-button {
+  border: 1px solid #ff4658;
+  color: #ff6472;
+}
+.reject-button:not(:disabled):hover {
+  background: rgb(255 70 88 / 12%);
+}
+.watch-footer {
+  padding: 22px 0 6px;
+  text-align: center;
+  color: #8290a5;
+  font-size: 14px;
+}

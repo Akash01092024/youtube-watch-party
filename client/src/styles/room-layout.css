@@ -1,0 +1,25 @@
+.watch-content {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: clamp(16px, 1.5vw, 28px);
+}
+.watch-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.15fr) minmax(280px, 1fr);
+  align-items: start;
+  gap: clamp(16px, 1.5vw, 26px);
+}
+.watch-main,
+.watch-sidebar {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+.watch-panel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #2a3441;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #19212b, #121921);
+}

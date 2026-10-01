@@ -1,0 +1,20 @@
+.watch-player {
+  background: #000;
+}
+.watch-player .video-frame {
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+  border-radius: 0;
+}
+.watch-player .tabs {
+  max-width: none;
+  margin: 0;
+  padding: 10px 12px;
+  background: #121921;
+}
+.watch-player .error {
+  padding: 0 16px;
+}
+.watch-player .empty-player {
+  border-radius: 0;
+}

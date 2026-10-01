@@ -1,0 +1,123 @@
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgb(237 36 59 / 12%),
+      transparent 60%
+    ),
+    #0b1017;
+}
+
+.page .card {
+  width: 100%;
+  max-width: 460px;
+  padding: 36px;
+  background: #151c26;
+  border: 1px solid #293241;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 30%);
+}
+
+.page .badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgb(237 36 59 / 12%);
+  color: #ff6472;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.page h1 {
+  margin: 20px 0 10px;
+  font-size: clamp(28px, 6vw, 36px);
+  line-height: 1.2;
+}
+
+.page .subtitle {
+  margin: 0 0 26px;
+  color: #a8b3c4;
+  line-height: 1.6;
+}
+
+.page .tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #090f18;
+}
+
+.page .tabs button {
+  padding: 11px 8px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #a8b3c4;
+  font-weight: 600;
+}
+
+.page .tabs button.active {
+  background: #ed243b;
+  border-color: #ed243b;
+  color: white;
+}
+
+.page .tabs button.active:not(:disabled):hover {
+  background: #ff354d;
+  border-color: #ff354d;
+}
+
+.page form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page form label {
+  color: #e8edf5;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.page form input {
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 6px;
+}
+
+.page form .primary {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px 18px;
+  border: 1px solid #ed243b;
+  border-radius: 8px;
+  background: #ed243b;
+  color: white;
+  font-weight: 700;
+}
+
+.page .error {
+  margin: 0;
+  color: #ff8794;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 16px;
+  }
+
+  .page .card {
+    padding: 24px 20px;
+  }
+}

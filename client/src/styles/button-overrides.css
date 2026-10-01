@@ -1,0 +1,47 @@
+button,
+.watch-page button,
+.tabs button {
+  border-radius: 7px;
+}
+.controls .seek-form {
+  flex: 1 1 280px;
+}
+.controls .seek-fields,
+.controls .video-fields {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+.controls .seek-fields input,
+.controls .video-fields input {
+  flex: 1;
+  min-width: 0;
+}
+.controls .seek-fields button,
+.controls .video-fields button {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+@media (max-width: 600px) {
+  .controls .video-fields {
+    align-items: stretch;
+  }
+  .controls .video-fields button {
+    align-self: flex-end;
+  }
+}
+.watch-page .primary {
+  background-color: #ed243b;
+  border: 1px solid #ed243b;
+}
+.watch-page .primary:not(:disabled):hover {
+  background-color: #ff354d;
+  border-color: #ff354d;
+}
+.watch-player .tabs button {
+  border: 1px solid #fff;
+}
+.watch-player .tabs button:not(:disabled):hover {
+  border-color: #fff;
+}

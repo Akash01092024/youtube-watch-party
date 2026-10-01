@@ -1,0 +1,95 @@
+.controls-panel {
+  padding: clamp(16px, 1.5vw, 24px);
+}
+.controls-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.controls-heading h2 {
+  margin: 0;
+  font-size: clamp(20px, 1.5vw, 25px);
+}
+.control-help {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #a8b3c4;
+  font-size: 12px;
+}
+.control-help svg {
+  flex-shrink: 0;
+}
+.transport-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.play-buttons {
+  display: flex;
+  gap: 12px;
+}
+.play-buttons button {
+  min-width: 110px;
+  min-height: 46px;
+}
+.secondary-button {
+  padding: 13px 20px;
+  border: 1px solid #354154;
+  border-radius: 8px;
+  background: #222b37;
+  color: #f4f6fa;
+  font-weight: 700;
+}
+.secondary-button:hover {
+  background: #303d4e;
+}
+.seek-form {
+  display: grid;
+  gap: 8px;
+  flex: 0 1 300px;
+}
+.seek-fields,
+.video-fields {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  min-width: 0;
+}
+.seek-fields input {
+  min-width: 0;
+  flex: 1;
+}
+.seek-fields button {
+  min-width: 90px;
+}
+.change-video-form {
+  display: grid;
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #303b49;
+}
+.video-fields input {
+  flex: 1;
+  min-width: 0;
+}
+.watch-page input,
+.watch-page select {
+  background: #0e151f;
+  color: #e8edf5;
+  color-scheme: dark;
+}
+.watch-page input::placeholder {
+  color: #7f8da3;
+}
+.watch-page .primary {
+  background: #ed243b;
+}
+.watch-page .primary:not(:disabled):hover {
+  background: #ff354d;
+}
