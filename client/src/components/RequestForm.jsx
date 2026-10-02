@@ -1,5 +1,39 @@
 import { useState } from "react";
 
+function extractVideoId(value) {
+  const input = value.trim();
+
+  if (/^[A-Za-z0-9_-]{11}$/.test(input)) {
+    return input;
+  }
+
+  try {
+    const url = new URL(input);
+    const hostname = url.hostname.toLowerCase();
+    const parts = url.pathname.split("/").filter(Boolean);
+
+    let id = null;
+
+    if (hostname === "youtu.be") {
+      id = parts[0];
+    } else if (
+      ["youtube.com", "www.youtube.com", "m.youtube.com"].includes(
+        hostname
+      )
+    ) {
+      if (url.pathname === "/watch") {
+        id = url.searchParams.get("v");
+      } else if (["shorts", "embed", "live"].includes(parts[0])) {
+        id = parts[1];
+      }
+    }
+
+    return /^[A-Za-z0-9_-]{11}$/.test(id || "") ? id : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function RequestForm({ socketRef, connected }) {
   const [action, setAction] = useState("seek");
   const [value, setValue] = useState("");
@@ -28,10 +62,12 @@ export default function RequestForm({ socketRef, connected }) {
     }
 
     if (action === "change_video") {
-      const videoId = value.trim();
+      const videoId = extractVideoId(value);
 
-      if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
-        setError("Enter an 11-character YouTube video ID.");
+      if (!videoId) {
+        setError(
+          "Enter a valid YouTube URL or 11-character video ID."
+        );
         return;
       }
 
@@ -70,7 +106,9 @@ export default function RequestForm({ socketRef, connected }) {
         {["seek", "change_video"].includes(action) && (
           <>
             <label htmlFor="request-value">
-              {action === "seek" ? "Time in seconds" : "Video ID"}
+              {action === "seek"
+                ? "Time in seconds"
+                : "YouTube URL or Video ID"}
             </label>
 
             <input
@@ -79,14 +117,26 @@ export default function RequestForm({ socketRef, connected }) {
               min={action === "seek" ? "0" : undefined}
               step={action === "seek" ? "any" : undefined}
               value={value}
-              onChange={(event) => setValue(event.target.value)}
+              onChange={(event) => {
+                setValue(event.target.value);
+                setError("");
+              }}
+              placeholder={
+                action === "seek"
+                  ? "Example: 150"
+                  : "Paste a YouTube link or video ID"
+              }
               required
               disabled={!connected}
             />
           </>
         )}
 
-        {error && <p className="error">{error}</p>}
+        {error && (
+          <p className="error" role="alert">
+            {error}
+          </p>
+        )}
 
         <button
           className="primary"
